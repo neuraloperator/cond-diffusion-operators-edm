@@ -1,0 +1,29 @@
+{
+    "dataset_class": "training.datasets.NSDataset",
+
+    // the low-res conditioning variable (y) should be 1/8th the size of samples
+    // from u.
+    "dataset_kwargs": {"lowres_scale_factor": 0.125},
+
+    // samples from the function u should be at this spatial resolution.
+    "resolution": 64,
+
+    // total window size is 7, 3 observations on each side
+    "window_size": 3,
+
+    "arch": "ddpmpp",
+    "tick": 5,
+    "snap": 5,
+
+    // batch size
+    "batch": 128,
+
+    // base width of UNO
+    "cbase": 64,
+
+    // rank hyperparameter for UNO (from 0-1, larger = more parameters)
+    "rank": 0.1,
+    
+    // retain what % of fourier modes (larger = more parameters)
+    "fmult": 0.5
+}
